@@ -1,0 +1,20 @@
+document.getElementById("zegarek").innerHTML = odliczaj();
+
+function odliczaj() {
+    var dzisiaj = new Date();
+
+    var dzien = dzisiaj.getDate();
+    var miesiac = dzisiaj.getMonth() + 1;
+    var rok = dzisiaj.getFullYear();
+
+    var godzina = dzisiaj.getHours();
+    if (godzina < 10) godzina = "0" + godzina;
+    var minuta = dzisiaj.getMinutes();
+    if (minuta < 10) minuta = "0" + minuta;
+    var sekunda = dzisiaj.getSeconds();
+    if (sekunda < 10) sekunda = "0" + sekuda;
+
+    document.getElementById("zegarek").innerHTML = dzien + "/" + miesiac + "/" + rok + " | " + godzina + ":" + minuta + ":" + sekunda;
+
+    setTimeout("odliczaj()", 1000)
+}
